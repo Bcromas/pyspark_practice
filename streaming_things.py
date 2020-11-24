@@ -4,10 +4,11 @@ from tweepy.streaming import StreamListener
 import socket
 import json
 
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_secret = ''
+SECRETS = json.load(open('secrets.json','r'))
+consumer_key = SECRETS['consumer_key']
+consumer_secret = SECRETS['consumer_secret']
+access_token = SECRETS['access_token']
+access_secret = SECRETS['access_secret']
 
 class TweetListener(StreamListener):
     """
